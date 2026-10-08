@@ -1,26 +1,39 @@
 # Watergate Files
 
-Watergate Files is a browser-based pixel adventure about investigating the Watergate scandal. Explore five chapters set in 1970s Washington, speak with characters, collect evidence, solve puzzles, and build credibility as the story unfolds.
+An interactive, browser-based pixel adventure game I created for my 11th-grade history final project.
 
-## Play
+Instead of just submitting a traditional research paper, I decided to take things further and build an entire game to accompany my essay about the Watergate scandal. My teacher loved the project, and it became one of my favorite ways to combine history, storytelling, and programming.
 
-Run the game locally with Node.js:
+## About the Game
 
-```sh
+Step into 1970s Washington, D.C., and investigate one of the biggest political scandals in American history.
+
+- Explore five interactive chapters
+- Interview characters and uncover clues
+- Collect evidence and solve puzzles
+- Build credibility as your investigation unfolds
+- Experience history through retro pixel-art gameplay
+
+## Play the Game
+
+**[Play Watergate Files](https://capitol-intrigue-quest.vercel.app)**
+
+## Built With
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+## Run Locally
+
+```bash
 npm install
 npm run dev
 ```
 
-Open the URL printed by Vite. Use the controls shown on the title screen to move, interact, and open the notebook. Progress is saved in your browser's local storage; the title screen lets you continue or start over.
+## Background
 
-## Development
+This was a personal school project that allowed me to explore a historical event beyond a written essay. I wanted to make learning about Watergate more engaging and interactive while demonstrating my interest in software development.
 
-```sh
-npm run build
-npm run test
-npm run lint
-```
-
-The game is a React and TypeScript app built with Vite. Chapter content, maps, dialogue, evidence, and puzzle answers live in `src/game/data.ts`. Game state and saving are handled in `src/hooks/useGame.ts`; rendering and menus are in `src/components/game/`.
-
-This is an interactive interpretation of historical events. Dialogue and gameplay are dramatized for the game.
+*Note: The game is based on real historical events, but certain dialogue and gameplay elements are dramatized for storytelling purposes.*
