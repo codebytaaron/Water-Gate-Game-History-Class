@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 12% 10%;
+    --foreground: 45 30% 88%;
+    --card: 40 10% 14%;
+    --card-foreground: 45 30% 88%;
+    --popover: 40 10% 14%;
+    --popover-foreground: 45 30% 88%;
+    --primary: 45 80% 55%;
+    --primary-foreground: 40 12% 10%;
+    --secondary: 160 40% 35%;
+    --secondary-foreground: 45 30% 95%;
+    --muted: 40 8% 18%;
+    --muted-foreground: 40 15% 55%;
+    --accent: 15 70% 50%;
+    --accent-foreground: 45 30% 95%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 12% 22%;
+    --input: 40 12% 22%;
+    --ring: 45 80% 55%;
+    --radius: 0.25rem;
+
+    --game-bg: 40 12% 8%;
+    --game-amber: 45 80% 55%;
+    --game-green: 160 60% 40%;
+    --game-red: 0 65% 50%;
+    --game-cream: 45 30% 88%;
+    --game-brown: 30 30% 25%;
+    --game-dark: 40 12% 6%;
+
+    --sidebar-background: 40 10% 12%;
+    --sidebar-foreground: 45 30% 88%;
+    --sidebar-primary: 45 80% 55%;
+    --sidebar-primary-foreground: 40 12% 10%;
+    --sidebar-accent: 40 8% 18%;
+    --sidebar-accent-foreground: 45 30% 88%;
+    --sidebar-border: 40 12% 22%;
+    --sidebar-ring: 45 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'VT323', monospace;
+    image-rendering: pixelated;
+  }
+}
+
+@layer utilities {
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace;
+  }
+  .font-pixel-body {
+    font-family: 'VT323', monospace;
+  }
+  .pixel-border {
+    box-shadow:
+      inset -2px -2px 0 0 hsl(var(--game-dark)),
+      inset 2px 2px 0 0 hsl(40 15% 30%);
+    border: 2px solid hsl(var(--border));
+  }
+  .pixel-border-amber {
+    box-shadow:
+      inset -2px -2px 0 0 hsl(45 80% 35%),
+      inset 2px 2px 0 0 hsl(45 80% 65%);
+    border: 2px solid hsl(var(--game-amber));
+  }
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+
+.animate-blink { animation: blink 1s step-end infinite; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out; }
+.animate-slide-up { animation: slideUp 0.4s ease-out; }
+.animate-glitch { animation: glitch 0.3s ease-in-out; }
